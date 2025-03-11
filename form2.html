@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <style>
+      body {
+        perspective: 1000px; /* 设置视角深度，使得立方体具有透视效果 */
+      }
+
+      #container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        transform-style: preserve-3d;
+        transform: rotateX(45deg) rotateY(45deg);
+        animation: rotate 5s infinite linear;
+      }
+
+      /* 立方体的各个面 */
+      .face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 1px solid black;
+      }
+
+      #a {
+        background-color: red;
+        transform: rotateY(0deg) translateZ(100px);
+      }
+
+      #b {
+        background-color: yellow;
+        transform: rotateY(90deg) translateZ(100px);
+      }
+
+      #c {
+        background-color: green;
+        transform: rotateX(90deg) translateZ(100px);
+      }
+
+      #d {
+        background-color: blue;
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+
+      #e {
+        background-color: purple;
+        transform: rotateY(180deg) translateZ(100px);
+      }
+
+      #f {
+        background-color: orange;
+        transform: rotateX(0deg) rotateY(0deg) translateZ(-100px);
+      }
+
+      /* 旋转动画 */
+      @keyframes rotate {
+        0% {
+          transform: rotateX(45deg) rotateY(45deg);
+        }
+        100% {
+          transform: rotateX(45deg) rotateY(405deg);
+        }
+      }
+    </style>
+
+    <div id="container">
+      <div id="a" class="face"></div>
+      <div id="b" class="face"></div>
+      <div id="c" class="face"></div>
+      <div id="d" class="face"></div>
+      <div id="e" class="face"></div>
+      <div id="f" class="face"></div>
+    </div>
+  </body>
+</html>
