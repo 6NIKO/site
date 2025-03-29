@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Equation Solver</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .equation-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        input {
+            width: 60px;
+            padding: 8px;
+            text-align: center;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 20px;
+            background-color: #f9f9f9;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quadratic Equation Solver</h1>
+    <p>Enter the coefficients for the equation ax² + bx + c = 0</p >
+    
+    <div class="equation-input">
+        <div class="input-group">
+            <input type="number" id="a" placeholder="a" step="any">
+            <span>x² +</span>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="b" placeholder="b" step="any">
+            <span>x +</span>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="c" placeholder="c" step="any">
+            <span>= 0</span>
+        </div>
+    </div>
+    
+    <button onclick="solveQuadratic()">Solve</button>
+    
