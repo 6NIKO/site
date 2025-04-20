@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes fly {
+            from {
+                top: 700px;
+            }
+
+            to {
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function Balloon(id, color1, diameter, speed) {
+            this.id = id;
+            this.color = color1;
+            this.diameter = diameter;
+            this.speed = speed;
+            this.make = function () {
+                let dv = document.createElement("div");
+                dv.id = 'b' + this.id;
+                dv.style.cssText = "width: " + this.diameter + "px; height: " + this.diameter + "px; border-radius: " + (this.diameter / 2) + "px; background-color: " + this.color + "; position: absolute; left: " + (this.id * 50) + "px; top: 700px;";
+                dv.innerHTML = '';
+                document.body.appendChild(dv);
+            }
+            this.rise = function () {
+                let dv = document.getElementById('b' + this.id);
+                dv.style.animationName = "fly";
+                dv.style.animationDuration = ~~(700 / this.speed) + 's';
+            }
+        }
+        for (let i = 0; i < 500; i++) {
+            let r = (Math.random() * 1000000).toString(16).replace(/\..*$/, '');
+            let s = Math.random() * 200;
+            let w = Math.random() * 200 + 30;
+            let b = new Balloon(i, '#' + r, w, s);
+            b.make();
+            b.rise();
+        }
+    </script>
+</body>
+
+</html>
